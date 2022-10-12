@@ -279,7 +279,7 @@ export default function Home() {
       
         
       }
-    function showMyPosition(e) {
+     /* eslint-disable */ function showMyPosition(e) {
     e.target.style.fontWeight='bold'
       position?.classList.add('show')
       overlay?.classList.add('show')
