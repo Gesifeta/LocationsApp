@@ -3,13 +3,12 @@ import { Country } from './types/country'
 import { useDispatch, useSelector } from 'react-redux'
 
 import styled from 'styled-components'
-import { setCountry, addNeigbors, setWidth, setPosition } from './features/countrySlice.ts'
+import { setCountry, addNeigbors, setWidth } from './features/countrySlice.ts'
 import Map from './components/countryMap.tsx'
 import MyLocation from './components/myLocation.tsx'
 import loadMap from './loadMap.ts';
 
 const googleMapLoaded=loadMap();
-
 
 const Container = styled.div`
 overflow-x: hidden;
@@ -225,7 +224,7 @@ export default function Home() {
     setValue(search)
     setFilter(filteredData)
   }
-  const indicatorColor = Math.trunc(Math.random() * 162627622).toString(16)
+  
   useEffect(() => {
     const position = document.querySelector('.position')
     const close = document.querySelector('.close')
@@ -291,11 +290,8 @@ export default function Home() {
     }
   },[positionFound])
   useEffect(() => {
-    const table=document.getElementsByTagName('table')
+
     const countryName = document.querySelectorAll('.countryName')
-    const home = document.getElementById('nav-home')
-    const map=document.querySelector('.map')
-    const about=document.getElementById('nav-about')
     const tableRow = document.getElementsByTagName('td')
     const card = document.querySelectorAll('.card')
     countryName.forEach(name => name.addEventListener('click', showNeighbors))
