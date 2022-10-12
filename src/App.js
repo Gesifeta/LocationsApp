@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Home from './home.tsx';
+import Header from './components/header.tsx';
+import { getCountry,getMyPosition } from './features/countrySlice.ts';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const dispatch = useDispatch()
+  useEffect(() => {
+    // Following line of code helps to fetch country data from REST COUNTRIES API
+    dispatch(getCountry())
+    dispatch(getMyPosition())
+
+  })
+  return ( 
+    <>
+      <Header/>
+      <Home/>
+      </>);
 }
 
 export default App;
