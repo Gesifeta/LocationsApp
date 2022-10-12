@@ -7,7 +7,7 @@ import { store } from './store/store.ts';
 import { Provider } from 'react-redux';
 import loadMap from './loadMap.ts';
 
-const googleMapLoaded = loadMap();
+loadMap();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>

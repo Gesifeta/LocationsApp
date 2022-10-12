@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const indicatorColor = Math.trunc(Math.random() * 162627622).toString(16)
-
 const HeaderStyled= styled.div`
     display: flex;
     position: fixed;

@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import reducer from './../features/countrySlice.ts'
-import { getDefaultMiddleware } from '@reduxjs/toolkit';
 
 
 export const store = configureStore({
